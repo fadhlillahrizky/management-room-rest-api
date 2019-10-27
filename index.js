@@ -46,5 +46,5 @@ app.group("/api/v2", (router) => {
     //another APIs goes here
 })
 
-app.listen(process.env.PORT||9876, function(){ console.log(`Listening on port ${port}!`)})
+app.listen(process.env.PORT||9900, function(){ console.log(`Listening on port ${port}!`)})
 //app.listen(port, () => console.log(`Listening on port ${port}!`))
