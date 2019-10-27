@@ -2,7 +2,13 @@ const models = require('../models')
 const Customers = models.customers
 
 exports.index = (req, res) => {
-    Customers.findAll().then(customers=>res.send(customers))
+    Customers.findAll(
+        {
+            order: [
+              ['id', 'ASC']
+            ]
+          }
+    ).then(customers=>res.send(customers))
 }
 
 exports.show = (req, res) => {

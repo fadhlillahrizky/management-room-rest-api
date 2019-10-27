@@ -4,16 +4,16 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('customers', [
       {
-        name: 1,
+        name: 'saya',
         identity_number: '113',
         phone_number: '0808080',
-        image: 'image_url',
+        image: 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png',
       },
       {
-        name: 2,
+        name: 'kamu',
         identity_number: '114',
         phone_number: '0909090',
-        image: 'image_url',
+        image: 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png',
       },
     ], {});
   },
