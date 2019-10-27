@@ -2,7 +2,13 @@ const models = require('../models')
 const Room = models.rooms
 
 exports.index = (req, res) => {
-    Room.findAll().then(room=>res.send(room))
+    Room.findAll(
+    {
+        order:[
+            ['id', 'ASC']
+        ]
+    }
+    ).then(room=>res.send(room))
 }
 
 exports.show = (req, res) => {
