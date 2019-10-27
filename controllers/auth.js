@@ -1,27 +1,44 @@
 const jwt = require('jsonwebtoken')
 
 const models = require('../models')
-const User = models.user
+const User = models.users
 
 exports.login = (req, res)=>{    
-    //check if email and pass match in db tbl user
-    const email = req.body.email
+    const username = req.body.username
     const password = req.body.password //use encryption in real world case!
 
-    User.findOne({where: {email, password}}).then(user=>{
-        if(user){
-            const token = jwt.sign({ userId: user.id }, 'my-secret-key')
+    User.findOne({where: {username, password}}).then(users=>{
+        if(users){
+            const token = jwt.sign({ userId: users.id }, 'my-secret-key')
             res.send({
-                user,
+                id: users.id,
+                username: users.username,
                 token
             }) 
         }else{
             res.send({
                 error: true,
-                message: "Wrong Email or Password!"
+                message: "Wrong username or Password!"
             })
         }
     })
-
-    
+}
+exports.register = (req, res)=>{
+    const username = req.body.username
+    const password = req.body.password 
+             User.create({
+                username,
+                password
+            }).then(result=> {
+                const token = jwt.sign({ userId: result.dataValues.id }, 'my-secret-key');
+                res.send({
+                    message: "success",
+                    data: {
+                        id: result.dataValues.id.toString(),
+                        name: result.dataValues.name,
+                        username: result.dataValues.username,
+                        token: token
+                    }
+                })
+            }).catch(err => console.log(err)) 
 }
