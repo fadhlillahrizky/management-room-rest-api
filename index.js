@@ -32,7 +32,7 @@ app.group("/api/v2", (router) => {
     router.get('/rooms', RoomController.index)    
     router.get('/room/:id', RoomController.show)    
     router.post('/room', authenticated, RoomController.store)    
-    router.patch('/room/:id', authenticated, RoomController.update)    
+    router.put('/room/:id', authenticated, RoomController.update)    
     router.delete('/room/:id', authenticated, RoomController.delete)
 
     //checkin API
