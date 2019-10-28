@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   rooms.associate = function(models) {
     // associations can be defined here
-    rooms.hasMany(models.orders, {
+    rooms.hasOne(models.orders, {
       as: 'order',
       foreignKey: 'room_id',
     })

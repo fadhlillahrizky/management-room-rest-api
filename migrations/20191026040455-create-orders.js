@@ -9,10 +9,10 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       is_done: {
-        type: Sequelize.INTEGER
+        type: Sequelize.BOOLEAN
       },
       is_booked: {
-        type: Sequelize.INTEGER
+        type: Sequelize.BOOLEAN
       },
       duration: {
         type: Sequelize.INTEGER
