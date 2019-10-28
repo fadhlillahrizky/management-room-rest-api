@@ -49,7 +49,7 @@ exports.chekin = (req, res) => {
         model: Order,
         as: "order",
         where: {
-          is_booked: true,
+          is_booked: 1,
         },
         include: [{
           model: Customer,
