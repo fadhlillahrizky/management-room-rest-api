@@ -9,7 +9,7 @@ module.exports = {
         is_done: 0,
         is_booked: 1,
         duration: 10,
-        order_end_time: '2019-10-21T02:32+00:00'
+        order_end_time: '2019-10-21T02:29:32+00:00'
       },
       {
         room_id: 2,
@@ -17,7 +17,7 @@ module.exports = {
         is_done: 0,
         is_booked: 1,
         duration: 10,
-        order_end_time: '2019-10-21T02:32+00:00'
+        order_end_time: '2019-10-21T02:29:32+00:00'
       },
     ], {});
   },

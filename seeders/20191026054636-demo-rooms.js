@@ -5,16 +5,13 @@ module.exports = {
     return queryInterface.bulkInsert('rooms', [
       {
         room_name: 'A1',
- 
 
       },
       {
         room_name: 'A2',
- 
       },
       {
         room_name: 'A3',
- 
       },
     ], {});
   },

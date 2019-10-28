@@ -4,10 +4,11 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     identity_number: DataTypes.STRING,
     phone_number: DataTypes.STRING,
-    image: DataTypes.STRING
+    image: DataTypes.STRING,
   }, {});
   customers.associate = function(models) {
     // associations can be defined here
+
   };
   return customers;
 };

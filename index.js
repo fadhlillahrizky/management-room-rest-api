@@ -36,11 +36,11 @@ app.group("/api/v2", (router) => {
     router.delete('/room/:id', authenticated, RoomController.delete)
 
     //checkin API
-    router.get('/checkin', OrderController.index)    
+    router.get('/checkin', OrderController.chekin)    
 
     //Order API
     router.get('/order/:id', OrderController.show)    
-    router.post('/orders', authenticated, OrderController.store)    
+    router.post('/order', authenticated, OrderController.store)    
     router.patch('/order/:id', authenticated, OrderController.update)    
 
     //another APIs goes here
