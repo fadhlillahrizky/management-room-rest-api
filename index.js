@@ -39,9 +39,9 @@ app.group("/api/v2", (router) => {
     router.get('/checkin', OrderController.chekin)    
 
     //Order API
-    router.get('/order/:id', OrderController.show)    
+    router.get('/order/:id', authenticated, OrderController.show)    
     router.post('/order', authenticated, OrderController.store)    
-    router.patch('/order/:id', OrderController.update)    
+    router.patch('/order/:id', authenticated, OrderController.update)    
 
     //another APIs goes here
 })
