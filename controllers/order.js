@@ -56,7 +56,7 @@ exports.chekin = (req, res) => {
           as: "customer",
         }],
       }],
-      room: [
+      order: [
         ['id', 'ASC']
       ]
     }
