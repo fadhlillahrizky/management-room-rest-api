@@ -41,7 +41,7 @@ app.group("/api/v2", (router) => {
     //Order API
     router.get('/order/:id', OrderController.show)    
     router.post('/order', authenticated, OrderController.store)    
-    router.patch('/order/:id', authenticated, OrderController.update)    
+    router.patch('/order/:id', OrderController.update)    
 
     //another APIs goes here
 })
