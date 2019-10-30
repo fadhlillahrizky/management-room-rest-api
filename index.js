@@ -26,16 +26,14 @@ app.group("/api/v2", (router) => {
     //auth API
     router.post('/login', AuthController.login)
 
-    //upload API
-    router.post('/upload', upload.single('profileImage'), CustomerController.profileUpload);
-
     //Customer API
     router.get('/customers', authenticated, CustomerController.index)    
     router.get('/customer/:id', authenticated, CustomerController.show)    
     router.post('/customer', authenticated, CustomerController.store)    
     router.patch('/customer/:id', authenticated, CustomerController.update)    
     router.delete('/customer/:id', authenticated, CustomerController.delete)   
-    router.delete('/customer/:id/profile', authenticated, CustomerController.delete)
+    //upload API
+    router.post('/customer/:id', upload.single('profileImage'), CustomerController.profileUpload);
 
     //Rooms API
     router.get('/rooms', RoomController.index)    
@@ -55,5 +53,5 @@ app.group("/api/v2", (router) => {
     //another APIs goes here
 })
 
-app.listen(process.env.PORT||9900, function(){ console.log(`Listening on port ${port}!`)})
-//app.listen(port, () => console.log(`Listening on port ${port}!`))
+//app.listen(process.env.PORT||9900, function(){ console.log(`Listening on port ${port}!`)})
+app.listen(port, () => console.log(`Listening on port ${port}!`))
