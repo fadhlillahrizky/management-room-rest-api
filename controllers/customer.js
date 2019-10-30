@@ -44,3 +44,16 @@ exports.delete = (req, res) => {
         })
     })
 }
+
+exports.profileUpload = (req, res) => {
+    // Customers.update(
+    //     {image: req.file.path},
+    //     {where:{id: req.params.id}})
+    console.log(req.originalUrl);
+    
+    res.status(200).json({
+        filePath: req.file.path,
+        massage: "success!"
+    });
+    
+}
